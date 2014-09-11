@@ -1,0 +1,58 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="AllUser, App_Web_xwxrj2wz" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="Stylesheet" href="Appdata/style.css"/>
+    <style type="text/css">
+        .style3
+        {
+            width: 100%;
+        }
+        </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 100%; height: 100%">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <div class="header">
+                <div class="header_interior" align="left">
+                    <img src="images/logo.gif" alt="Logo" width="44" height="44" style="float:left; margin-right:10px;" />
+                    <h1 class="title">
+                        <b><u>ADIT Library</u></b></h1>
+                </div>
+            </div>
+            <div style="width:100%;">
+                <table style="width:100%;">
+                    <tr align="right">
+                        <td>
+                            <asp:LinkButton ID="lnkbtnHome" runat="server" onclick="lnkbtnHome_Click">Home</asp:LinkButton>
+                            |<asp:LinkButton ID="lnkbtnSuggestion" runat="server" 
+                                onclick="lnkbtnSuggetion_Click">Suggestion</asp:LinkButton>
+                            <br />
+                            <hr width=100% size="1" noshade="noshade" style="color: #C0C0C0" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="style3" align="right">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <!--div align="center">
+                    <hr style="width:100%" />
+                    <p style="background-color:#006699;height:36px">
+                        Designed By:<font color=blue><u>Shah Dipen</u></font>
+                    </p>
+    </div-->
+</body>
+</html>

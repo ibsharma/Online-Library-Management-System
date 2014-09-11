@@ -1,0 +1,132 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="LibAdmin, App_Web_xwxrj2wz" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="Stylesheet" href="Appdata/style.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .LEFT
+        {
+            height: 400px;
+            width: 400px;
+        }
+        .style1
+        {
+        }
+        .menu
+        {
+            margin-top:0px;
+        }
+        .style2
+        {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 100%; height: 100%">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <div class="header">
+                <div class="header_interior" align="left">
+                    <img src="images/logo.gif" alt="Logo" width="44" height="44" style="float:left; margin-right:10px;" />
+                    <h1 class="title">
+                        <b><u>ADIT Library</u></b></h1>
+                </div>
+            </div>
+            <div class="main">
+                <asp:Menu ID="menuMain" runat="server" BackColor="Silver" Font-Names="Verdana" Font-Size="13px" 
+                        ForeColor="Black" StaticSubMenuIndent="10px" Width="350px"
+                                    onmenuitemclick="menuMain_MenuItemClick" CssClass="style2" 
+                        Orientation="Horizontal" >
+                    <DynamicHoverStyle BackColor="White" ForeColor="#003366" 
+                        BorderColor="#33CCFF" BorderStyle="Solid" />
+                    <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" 
+                        BackColor="#99CCFF" BorderColor="#FFFFCC" ItemSpacing="2px" 
+                        ForeColor="#003366" />
+                    <DynamicMenuStyle BackColor="White" HorizontalPadding="1px" 
+                        VerticalPadding="2px" BorderColor="#0066CC" />
+                    <DynamicSelectedStyle BackColor="White" ItemSpacing="3px" />
+                    <Items>
+                        <asp:MenuItem Text="Main" Value="Main">
+                            <asp:MenuItem Text="Add" Value="Add">
+                                <asp:MenuItem Text="Book" Value="Book" NavigateUrl="~/AddBook.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Student" Value="Student" NavigateUrl="~/AddStudent.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AddFaculty.aspx" Text="Faculty" Value="Faculty">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AddMagazine.aspx" Text="Magazine" Value="Magazine">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Backup/Restore" Value="Backup/Restore" 
+                                NavigateUrl="~/RestoreBackup.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Reports" Value="Reports">
+                            <asp:MenuItem NavigateUrl="~/IssueReport.aspx" Text="Issue Report" 
+                                                Value="Issue Report"></asp:MenuItem>
+                            <asp:MenuItem Text="Return Report" Value="Return Report" 
+                                                NavigateUrl="~/ReturnReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Defaulter Report" Value="Defaulter Report" 
+                                                NavigateUrl="~/DefaulterReport.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Generate Barcode" Value="Generate Barcode" 
+                                NavigateUrl="~/GenerateBarcode.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/BookTitles.aspx" Text="Titles Report" 
+                                Value="Titles Report"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Transaction" Value="Transaction">
+                            <asp:MenuItem Text="Issue" Value="Issue" NavigateUrl="~/Issue.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Return" Value="Return" NavigateUrl="~/Return.aspx">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Search" Value="Search">
+                            <asp:MenuItem Text="Book Search" Value="Book Search" 
+                                                NavigateUrl="~/BookSearch.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Student Search" Value="Student Search" 
+                                                NavigateUrl="~/StudentSearch.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Magazine Search" Value="Magazine Search" 
+                                NavigateUrl="~/MagazineSearch.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Settings" Value="Settings">
+                            <asp:MenuItem Text="Change Password" Value="Change Password" 
+                                NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Add/Remove User" Value="Add User" 
+                                NavigateUrl="~/AddRemoveUser.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Change Loan Period" Value="Change Loan Period" 
+                                NavigateUrl="~/ChangeLoan.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Suggestion" Value="Suggetion" 
+                            NavigateUrl="~/ShowSuggetion.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="White" ForeColor="Red" BorderColor="#000099" 
+                        BorderStyle="Solid" />
+                    <StaticMenuItemStyle HorizontalPadding="15px" VerticalPadding="2px" 
+                        BackColor="#99CCFF" BorderColor="White" BorderStyle="Solid" 
+                        ForeColor="#003366" />
+                    <StaticMenuStyle BackColor="#CCCCFF" />
+                    <StaticSelectedStyle BackColor="White" />
+                </asp:Menu>
+                <hr style="color: #C0C0C0" width="100%" />
+                <br />
+                <table style="width:100%;margin:0 0 0 0">
+                    <tr>
+                        <td>
+                            <div style="margin-top: 0px">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </asp:ContentPlaceHolder>    </div>
+    </form>
+    <br /><br />
+</body>
+</html>
